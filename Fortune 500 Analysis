@@ -60,7 +60,7 @@ VALUES
 
 # Analysis: 
 
-# Show which of the companies listed are likely to succeed in the future based on their current revenue(300 or more, 200, 100, under 100 then bankrupt)
+#1 Show which of the companies listed are likely to succeed in the future based on their current revenue(300 or more, 200, 100, under 100 then bankrupt)
 
 SELECT company_name, revenue,
 CASE 
@@ -72,7 +72,7 @@ FROM fortune_companies
 ORDER BY revenue;
 
 
-# Calculate how much revenue is made for each company where the total revenue is at least $300.
+#2 Calculate how much revenue is made for each company where the total revenue is at least $300.
 
 SELECT company_name, SUM(revenue) as revenue_earned
 FROM fortune_companies
@@ -80,7 +80,7 @@ GROUP BY company_name
 HAVING revenue_earned>=300;
 
 
-# Classify which of the companies are in the technology industry with an employee tenure greater than 5 years and more than 2500 employees.
+#3 Classify which of the companies are in the technology industry with an employee tenure greater than 5 years and more than 2500 employees.
 
 SELECT company_name, employees, avg_employee_tenure AS employee_tenure
 FROM fortune_companies 
@@ -89,7 +89,7 @@ AND employee_tenure>=5
 AND employees<=2500
 
 
-# What is the average amount of revenue each company in both the tech industry & telecommunications industry makes?
+#4 What is the average amount of revenue each company in both the tech industry & telecommunications industry makes?
  
 SELECT company_name, industry, AVG(revenue) as 'avg_revenue'
 FROM fortune_companies 
