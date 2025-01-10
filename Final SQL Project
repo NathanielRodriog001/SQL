@@ -1,4 +1,4 @@
-#1. Show Customers (their full names, customer ID, and country) who are not in the US. (Hint: != or <> can be used to say "is not equal to").
+#1. Show Customers (their full names, customer ID, and country) who are not in the US. 
 
 SELECT FirstName, LastName, CustomerId, Country 
 FROM chinook.customers 
@@ -102,7 +102,6 @@ JOIN chinook.Customers cust
 ON cust.SupportRepId = emp.EmployeeId
 JOIN chinook.Invoices Inv 
 ON Inv.CustomerId = cust.CustomerId
-
 WHERE emp.Title = 'Sales Support Agent' 
 AND Inv.InvoiceDate LIKE '2009%' 
 GROUP BY emp.FirstName
